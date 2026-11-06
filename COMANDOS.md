@@ -2,12 +2,13 @@
 
 ## Lo que ya hicimos
 
-1. Creamos la página completa: `index.html` y `README.md`.
-   La página tiene también una sección **"Oraciones y prédicas"**:
-   un formulario que no guarda nada — solo arma el texto y lo abre
-   para compartirlo en el grupo de Facebook o por WhatsApp. Los
-   comentarios y las prédicas (texto, audio o video) se publican
-   como publicaciones del grupo.
+1. Creamos la página completa: `index.html`, `README.md` y `COMANDOS.md`.
+   La página tiene: versículo del día, Videos, Biblia completa, Libros
+   gratis, Devocionales, Temas, Versículos anteriores, **"Oraciones y
+   prédicas"** y **"Peticiones"**: formularios que no guardan nada — solo
+   arman el texto y lo abren para compartirlo en el grupo de Facebook o
+   por WhatsApp. Los comentarios y las prédicas (texto, audio o video)
+   se publican como publicaciones del grupo.
 2. Falta un paso que solo se puede hacer desde la cuenta de Nelson en el navegador:
    crear el repositorio público **dios-te-habla-hoy** en https://github.com/new
    (nombre: `dios-te-habla-hoy`, descripción: "Un versículo de la Biblia y una
@@ -37,8 +38,8 @@ ls
 # 5. Ver qué cambió
 git status
 
-# 6. Guardar los cambios (los dos archivos nuevos)
-git add index.html README.md
+# 6. Guardar los cambios (los archivos nuevos y actualizados)
+git add index.html README.md COMANDOS.md
 
 # 7. Confirmar los cambios con un mensaje
 git commit -m "Agrego la página Dios Te Habla Hoy"

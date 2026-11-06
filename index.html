@@ -13,9 +13,9 @@
   header h1{font-size:2.1rem;letter-spacing:.5px}
   header p{font-family:Arial,Helvetica,sans-serif;font-size:1rem;opacity:.92;max-width:560px;margin:.6rem auto 0}
   nav{background:#2e1f14;position:sticky;top:0;z-index:10}
-  nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:.2rem;list-style:none;padding:.4rem}
-  nav a{color:#f5d76e;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:.95rem;padding:.5rem .8rem;border-radius:20px}
-  nav a:hover{background:rgba(245,215,110,.2)}
+  nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem;list-style:none;padding:.6rem}
+  nav a{color:#2e1f14;background:var(--dorado-claro);text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:.95rem;font-weight:bold;padding:.6rem 1rem;border-radius:30px;display:inline-block}
+  nav a:hover{background:#fff}
   main{max-width:760px;margin:0 auto;padding:1rem}
   section{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:1.4rem;margin:1rem 0}
   .fecha{font-family:Arial,Helvetica,sans-serif;color:var(--dorado);font-weight:bold;text-transform:uppercase;font-size:.85rem;letter-spacing:1px;text-align:center}
@@ -28,6 +28,14 @@
   .btn{font-family:Arial,Helvetica,sans-serif;display:inline-block;text-decoration:none;color:#fff;background:var(--verde);padding:.7rem 1.2rem;border-radius:30px;font-weight:bold}
   .btn.azul{background:#1877f2}
   .btn.dorado{background:var(--dorado)}
+  /* Botones con símbolos bíblicos: forma de libro/Biblia, paloma, cruz, llama, pez */
+  .btn-simbolo{border-radius:6px 22px 6px 22px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+  .btn-biblia-forma{background:#6b4a1f;border-radius:4px 4px 18px 4px;border-left:6px solid var(--dorado)}
+  .btn-paloma{background:#6a1b9a;border-radius:22px 4px 22px 4px}
+  .btn-cruz{background:#8b0000;border-radius:4px}
+  .btn-llama{background:#c65d00;border-radius:22px}
+  .btn-pez{background:#00695c;border-radius:22px 4px}
+  .btn.rojo{background:#c0392b}
   .temas{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
   .tema{background:var(--crema);border:1px solid var(--dorado-claro);border-radius:10px;padding:.8rem;text-align:center}
   .tema strong{display:block;font-size:1.1rem;color:var(--marron)}
@@ -44,8 +52,22 @@
   .form-oracion button{font-family:Arial,Helvetica,sans-serif;display:inline-block;border:none;cursor:pointer;color:#fff;background:var(--verde);padding:.7rem 1.2rem;border-radius:30px;font-weight:bold;margin-top:.8rem}
   .form-oracion button.azul{background:#1877f2}
   #texto-copiado{font-family:Arial,Helvetica,sans-serif;color:var(--verde);font-weight:bold;display:none;margin-top:.5rem}
-  footer{text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:.9rem;color:#777;padding:1.5rem 1rem 2rem}
-  footer a{color:var(--dorado)}
+  .resultado-biblia{font-family:Georgia,'Times New Roman',serif;background:var(--crema);border:1px solid var(--dorado-claro);border-radius:10px;padding:1rem;margin-top:1rem;white-space:pre-wrap}
+  .resultado-biblia .ref{font-family:Arial,Helvetica,sans-serif;font-weight:bold;color:var(--marron)}
+  .libro{border:1px solid var(--dorado-claro);border-radius:10px;padding:.9rem;margin:.7rem 0;background:var(--crema)}
+  .libro strong{color:var(--marron);font-size:1.05rem}
+  .libro p{font-family:Arial,Helvetica,sans-serif;font-size:.95rem;color:#555}
+  .devocional{border-left:4px solid var(--dorado);background:var(--crema);border-radius:8px;padding:.9rem 1rem;margin:.9rem 0}
+  .devocional h3{margin-top:0}
+  .devocional .oracion{font-style:italic;color:var(--marron)}
+  .video-responsive{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-top:1rem}
+  .video-responsive iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  #titulo-video{font-family:Arial,Helvetica,sans-serif;text-align:center;font-weight:bold;color:var(--marron);margin-top:.6rem}
+  footer{text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:.9rem;color:#fff;padding:1.5rem 1rem 2rem;background:linear-gradient(rgba(46,31,20,.75),rgba(46,31,20,.75)),url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=80') center/cover no-repeat}
+  footer a{color:var(--dorado-claro)}
+  .naturaleza{background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=80') center/cover no-repeat;border-radius:14px;min-height:260px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:2rem 1.4rem;margin:1rem 0}
+  .naturaleza h2{color:#fff;border-bottom:none;font-size:1.7rem}
+  .naturaleza p{font-size:1.1rem;max-width:520px}
   @media(max-width:520px){header h1{font-size:1.6rem}.versiculo{font-size:1.3rem}.temas{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -56,17 +78,20 @@
 </header>
 <nav>
   <ul>
-    <li><a href="#hoy">Hoy</a></li>
-    <li><a href="#historia">Historia</a></li>
-    <li><a href="#temas">Temas</a></li>
-    <li><a href="#anteriores">Versículos anteriores</a></li>
-    <li><a href="#oraciones">Oraciones y prédicas</a></li>
-    <li><a href="#grupo">Grupo</a></li>
+    <li><a href="#inicio" class="btn-inicio">🏠 Inicio</a></li>
+    <li><a href="#videos" class="btn-videos">🎬 Videos</a></li>
+    <li><a href="#biblia" class="btn-biblia">📖 Biblia</a></li>
+    <li><a href="#libros" class="btn-libros">📚 Libros gratis</a></li>
+    <li><a href="#devocionales" class="btn-devocionales">🕊️ Devocionales</a></li>
+    <li><a href="#oraciones" class="btn-oraciones">💬 Oraciones y prédicas</a></li>
+    <li><a href="#peticiones" class="btn-peticiones">🙏 Peticiones</a></li>
+    <li><a href="#donar" class="btn-donar">❤️ Donar</a></li>
+    <li><a href="#grupo" class="btn-grupo">👥 Grupo</a></li>
   </ul>
 </nav>
 <main>
 
-<section id="hoy">
+<section id="inicio">
   <p class="fecha">Viernes, 6 de noviembre de 2026</p>
   <p class="versiculo">«Los que esperan en el Señor renovarán sus fuerzas; levantarán el vuelo como las águilas.»</p>
   <p class="cita">— Isaías 40:31</p>
@@ -79,6 +104,38 @@
   </div>
 </section>
 
+<section id="videos">
+  <h2>🎬 Videos — escucha y mira aquí mismo</h2>
+  <p>Escucha música cristiana y mira historias bíblicas <strong>sin salir de esta página</strong>: el video suena aquí mismo. Toca un botón y cambia lo que suena.</p>
+
+  <div class="video-responsive">
+    <iframe id="reproductor" src="https://www.youtube.com/embed/JP-LZQLJHIc" title="Reproductor de videos de Dios Te Habla Hoy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  <p id="titulo-video">🎵 Música cristiana — «El Poderoso Nombre de Jesús» — Eliab David</p>
+
+  <div class="botones">
+    <button type="button" class="btn dorado" data-video="JP-LZQLJHIc" data-titulo="🎵 Música cristiana — «El Poderoso Nombre de Jesús» — Eliab David">🎵 Música cristiana</button>
+    <button type="button" class="btn dorado" data-video="GIbHAll6jp4" data-titulo="🙏 Alabanza para orar — «Clama a Mí» (Jeremías 33:3) — Salmo 138">🙏 Alabanzas</button>
+    <button type="button" class="btn dorado" data-video="ujVJNiyUxsg" data-titulo="📖 Historia bíblica — David y Goliat — Superlibro (episodio oficial)">📖 Historias bíblicas</button>
+    <button type="button" class="btn dorado" data-video="xMHwgVYEymE" data-titulo="🔥 Historia bíblica — Elías: el fuego y el susurro (1 Reyes 17–19)">🔥 Elías</button>
+  </div>
+
+  <h3>Buscar más videos en YouTube</h3>
+  <form class="form-oracion" id="form-buscar-youtube">
+    <label for="tema-youtube">¿Qué quieres ver o escuchar?</label>
+    <input id="tema-youtube" type="text" placeholder="Por ejemplo: historia de David y Goliat">
+    <div class="botones">
+      <button type="submit">🔍 Buscar en YouTube</button>
+    </div>
+  </form>
+  <div class="botones">
+    <a class="btn rojo" href="https://www.youtube.com/results?search_query=historias+b%C3%ADblicas+en+espa%C3%B1ol" target="_blank" rel="noopener">📖 Historias bíblicas</a>
+    <a class="btn rojo" href="https://www.youtube.com/results?search_query=devocional+cristiano+en+espa%C3%B1ol" target="_blank" rel="noopener">🙏 Devocionales</a>
+    <a class="btn rojo" href="https://www.youtube.com/results?search_query=m%C3%BAsica+cristiana+alabanza+en+espa%C3%B1ol" target="_blank" rel="noopener">🎵 Música cristiana</a>
+  </div>
+  <p class="nota">Los videos se ven en YouTube, desde esta página. No necesitas cuenta ni iniciar sesión aquí.</p>
+</section>
+
 <section id="historia">
   <h2>Historia de hoy — 1 minuto</h2>
   <h3>Elías bajo el árbol — 1 Reyes 19</h3>
@@ -86,6 +143,118 @@
   <p>Pero Dios no lo regañó. No le pidió que se levantara y siguiera corriendo. Lo dejó dormir. Y un ángel le llevó pan y agua, para que comiera y descansara. Durmió otra vez, comió otra vez, y poco a poco, sus fuerzas volvieron.</p>
   <p><strong>La lección:</strong> la fuerza no se recupera empujando más cuando ya estás vacío. Se renueva descansando en Dios.</p>
 </section>
+
+<section id="biblia">
+  <h2>📖 La Biblia completa — busca y lee</h2>
+  <p>Aquí está la Biblia entera: los 66 libros, Antiguo y Nuevo Testamento. Escribe una cita o elige un libro y un capítulo, y léelo aquí mismo.</p>
+  <p class="nota"><strong>Nota importante:</strong> el buscador de esta página muestra el texto en inglés, en la traducción pública World English Bible (dominio público), porque la API gratuita que usamos solo devuelve ese texto en inglés. Para leer el mismo pasaje en español, usa el botón <strong>«Leer en español (Reina-Valera)»</strong> que aparece con cada resultado: abre el mismo pasaje en BibleGateway, en Reina-Valera 1960.</p>
+
+  <form class="form-oracion" id="form-buscar-biblia">
+    <label for="cita-biblia">Buscar una cita (por ejemplo: Juan 3:16, Salmo 23, Génesis 1)</label>
+    <input id="cita-biblia" type="text" placeholder="Escribe la cita, por ejemplo: Juan 3:16" value="Juan 3:16">
+    <div class="botones">
+      <button type="submit">🔍 Buscar</button>
+    </div>
+  </form>
+
+  <form class="form-oracion" id="form-leer-capitulo">
+    <label for="libro-biblia">Leer un capítulo completo</label>
+    <select id="libro-biblia"></select>
+    <label for="capitulo-biblia">Capítulo</label>
+    <input id="capitulo-biblia" type="number" min="1" max="150" value="1">
+    <div class="botones">
+      <button type="submit">📖 Leer capítulo</button>
+    </div>
+  </form>
+
+  <div class="resultado-biblia" id="resultado-biblia" style="display:none">
+    <p class="ref" id="resultado-ref"></p>
+    <p id="resultado-texto"></p>
+    <p id="resultado-version" style="font-family:Arial,Helvetica,sans-serif;font-size:.85rem;color:#777"></p>
+    <div class="botones">
+      <a class="btn dorado" id="btn-espanol" href="https://www.biblegateway.com/passage/?search=John%203%3A16&amp;version=RVR1960" target="_blank" rel="noopener">Leer en español (Reina-Valera)</a>
+      <a class="btn azul" id="btn-youversion" href="https://www.bible.com/es/bible/149/" target="_blank" rel="noopener">Leer en YouVersion</a>
+    </div>
+  </div>
+  <p class="nota" id="error-biblia" style="display:none">No encontré esa cita, revisa el libro y el capítulo. Prueba con una cita como «Juan 3:16» o «Salmo 23».</p>
+  <p class="nota">También puedes leer la Biblia completa en PDF, gratis, en la sección <a href="#libros">Libros gratis</a> (Reina-Valera 1909).</p>
+</section>
+
+<section id="libros">
+  <h2>📚 Libros gratis</h2>
+  <p>Libros cristianos clásicos, gratis y de dominio público. Se abren en otra pestaña, no necesitas cuenta en esta página.</p>
+
+  <div class="libro">
+    <strong>El Progreso del Peregrino — John Bunyan (1678)</strong>
+    <p>El viaje de Cristiano desde la Ciudad de Destrucción hasta la Ciudad Celestial. El clásico cristiano más leído después de la Biblia.</p>
+    <div class="botones">
+      <a class="btn dorado" href="http://www.samizdat.qc.ca//arts/lit/PDFs/ElPeregrino_JB.pdf" target="_blank" rel="noopener">📄 Leer / descargar el PDF</a>
+      <a class="btn" href="https://www.biblia.work/sermones/el-progreso-del-peregrino-descargar-libro-gratis/" target="_blank" rel="noopener">📖 Página de lectura</a>
+    </div>
+  </div>
+
+  <div class="libro">
+    <strong>Santa Biblia — Reina-Valera 1909, completa en PDF</strong>
+    <p>La Biblia entera en español, los 66 libros, en un solo PDF gratis (texto de dominio público).</p>
+    <div class="botones">
+      <a class="btn dorado" href="http://bibles.org.uk/Reina-Valera-1909.pdf" target="_blank" rel="noopener">📄 Descargar la Biblia en PDF</a>
+    </div>
+  </div>
+
+  <div class="libro">
+    <strong>Biblioteca Virtual Gratuita — Editorial Imagen</strong>
+    <p>Cientos de libros digitales y audiolibros cristianos y de inspiración, gratis. Pide un registro gratuito con tu correo para entrar a la biblioteca.</p>
+    <div class="botones">
+      <a class="btn dorado" href="https://librosgratis.editorialimagen.com/" target="_blank" rel="noopener">📚 Entrar a la biblioteca gratis</a>
+    </div>
+  </div>
+</section>
+
+<section id="devocionales">
+  <h2>🙏 Devocionales</h2>
+  <p>Un momento corto cada día: un versículo, una reflexión con lógica y una oración. Escritos para Dios Te Habla Hoy.</p>
+
+  <div class="devocional">
+    <h3>👨‍👩‍👧 Familia — La casa llena, el corazón vacío</h3>
+    <p><strong>«Yo y mi casa serviremos a Jehová.» — Josué 24:15</strong></p>
+    <p>Una casa puede estar llena de gente y de ruido, y aun así cada uno sentirse solo. Eso pasa cuando comemos juntos sin mirarnos, cuando hablamos sin escuchar. La familia no se arregla con más cosas, se arregla con presencia: preguntar sin juzgar, escuchar sin interrumpir, estar de verdad. Hoy, en la cena, deja el teléfono a un lado y pregunta: ¿cómo te fue hoy, de verdad?</p>
+    <p class="oracion">Oración: Señor, ayúdame a estar presente en mi casa, a escuchar antes de juzgar. Amén.</p>
+  </div>
+
+  <div class="devocional">
+    <h3>🦅 Fuerza — Cuando ya no puedes más</h3>
+    <p><strong>«Los que esperan en el Señor renovarán sus fuerzas.» — Isaías 40:31</strong></p>
+    <p>Elías acababa de ganar una gran batalla y aun así terminó agotado bajo un árbol, pidiendo rendirse. Dios no lo regañó: lo dejó dormir y comer, y poco a poco sus fuerzas volvieron. La lógica es simple: un cuerpo y una mente vacíos no se llenan empujando más, se llenan descansando. Descansar en Dios no es rendirse, es recargar para seguir.</p>
+    <p class="oracion">Oración: Señor, hoy descanso en Ti para que mañana tenga fuerzas nuevas. Amén.</p>
+  </div>
+
+  <div class="devocional">
+    <h3>💛 Ánimo — Preocuparse en la cama no resuelve nada</h3>
+    <p><strong>«En paz me acostaré, y asimismo dormiré.» — Salmo 4:8</strong></p>
+    <p>Darle vueltas al problema toda la noche no lo mueve ni un centímetro, solo te quita el sueño y te deja más cansado para enfrentarlo mañana. Jesús dormía en la barca en medio de la tormenta, no porque no le importara, sino porque sabía en quién confiaba. Hoy suelta lo que no puedes resolver esta noche: descansa, y mañana piensa con la cabeza clara.</p>
+    <p class="oracion">Oración: Señor, te entrego esta noche lo que me preocupa y duermo en paz. Amén.</p>
+  </div>
+
+  <div class="devocional">
+    <h3>😴 Descanso — Un día ordenado empieza la noche antes</h3>
+    <p><strong>«Echa sobre Jehová tu carga, y él te sustentará.» — Salmo 55:22</strong></p>
+    <p>El día de mañana se gana o se pierde esta noche. Si te acuestas tarde, con el teléfono encendido y la mente llena de pendientes, mañana empiezas cansado y todo te pesa el doble. Ordenar la noche es sencillo: apaga las pantallas un rato antes, deja listo lo de mañana y entrega tus cargas en oración. Dormir bien también es cuidar el cuerpo que Dios te dio.</p>
+    <p class="oracion">Oración: Señor, ayúdame a descansar bien esta noche para servirte mejor mañana. Amén.</p>
+  </div>
+
+  <h3>Más devocionales gratis</h3>
+  <p>También puedes leer devocionales diarios gratis en otras páginas:</p>
+  <div class="botones">
+    <a class="btn dorado" href="https://www.bible.com/es/bible-study/devotionals" target="_blank" rel="noopener">📖 Devocionales en YouVersion (gratis)</a>
+  </div>
+  <p class="nota">La aplicación <strong>Nuestro Pan Diario</strong> también es gratis: búscala en la tienda de aplicaciones de tu teléfono.</p>
+  <div class="botones">
+    <a class="btn btn-simbolo btn-biblia-forma" href="#biblia">📖 Leer la Biblia</a>
+    <a class="btn btn-simbolo btn-paloma" href="#oraciones">🕊️ Orar</a>
+    <a class="btn btn-simbolo btn-llama" href="#videos">🔥 Ver videos</a>
+  </div>
+</section>
+
 
 <section id="temas">
   <h2>Busca por tema</h2>
@@ -136,8 +305,8 @@
     <label for="texto-oracion">Tu oración o tu prédica</label>
     <textarea id="texto-oracion" placeholder="Escribe aquí tu petición, tu oración o tu prédica..." required></textarea>
     <div class="botones">
-      <button type="button" class="azul" id="btn-facebook">Comentar en Facebook</button>
-      <button type="button" id="btn-whatsapp">Compartir por WhatsApp</button>
+      <button type="button" class="btn-simbolo btn-paloma azul" id="btn-facebook">🕊️ Comentar en Facebook</button>
+      <button type="button" class="btn-simbolo btn-biblia-forma" id="btn-whatsapp">📖 Compartir por WhatsApp</button>
     </div>
     <p id="texto-copiado">✅ Tu texto quedó copiado. Ahora pégalo en el grupo de Facebook.</p>
   </form>
@@ -145,27 +314,75 @@
   <h3>Comenta y comparte tu prédica en Facebook</h3>
   <p>En el grupo puedes publicar tu prédica en texto, en audio o en video, y comentar las oraciones de los demás.</p>
   <div class="botones">
-    <a class="btn azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">Comentar en Facebook</a>
-    <a class="btn azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">Compartir tu prédica en Facebook</a>
+    <a class="btn btn-simbolo btn-cruz azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">✝️ Comentar en Facebook</a>
+    <a class="btn btn-simbolo btn-pez azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">🐟 Compartir tu prédica en Facebook</a>
   </div>
 
-  <!--
-    PLUGIN DE COMENTARIOS DE FACEBOOK (marcador):
-    El plugin oficial de Facebook (fb-comments) necesita el SDK de
-    Facebook y un ID de aplicación, y solo funciona con la URL
-    publicada de la página. Por eso, en esta página estática los
-    comentarios viven directamente en el grupo de Facebook, que es
-    donde la comunidad ya está. Cuando la página esté publicada en
-    GitHub Pages se puede añadir aquí el div oficial:
-    <div class="fb-comments" data-href="https://www.facebook.com/groups/3326503057738826" data-width="100%" data-numposts="5"></div>
-    Por ahora, el botón de abajo abre los comentarios del grupo.
-  -->
   <div id="comentarios-facebook">
     <h3>Comentarios</h3>
     <p>Los comentarios están en el grupo de Facebook. Allí puedes leer las oraciones de otros, comentar y orar por ellos.</p>
     <div class="botones">
-      <a class="btn azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">Ver comentarios en Facebook</a>
+      <a class="btn btn-simbolo btn-paloma azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">🕊️ Ver comentarios en Facebook</a>
     </div>
+  </div>
+</section>
+
+<section id="peticiones">
+  <h2>🙏 Peticiones</h2>
+  <p>¿Tienes una petición? Déjala aquí, y oraremos por ti. Por tu familia, por tu salud, por tu trabajo, por lo que lleves en el corazón.</p>
+  <p class="nota">🙏 <strong>¿Cómo funciona?</strong> Escribe tu petición abajo. Al enviarla, se abre para compartirla en el grupo de Facebook — allí queda publicada y otros pueden orar por ti y comentar. También puedes compartirla por WhatsApp. En esta página no queda guardado nada, ni se pide cuenta ni contraseña.</p>
+  <form class="form-oracion" id="form-peticion">
+    <label for="nombre-peticion">Tu nombre (opcional)</label>
+    <input id="nombre-peticion" type="text" placeholder="Escribe tu nombre, o déjalo en blanco">
+    <label for="texto-peticion">Tu petición</label>
+    <textarea id="texto-peticion" placeholder="Escribe aquí tu petición de oración..." required></textarea>
+    <div class="botones">
+      <button type="button" class="btn-simbolo btn-paloma azul" id="btn-peticion-facebook">🕊️ Enviar petición en Facebook</button>
+      <button type="button" class="btn-simbolo btn-biblia-forma" id="btn-peticion-whatsapp">📖 Enviar petición por WhatsApp</button>
+    </div>
+    <p id="peticion-copiada" style="font-family:Arial,Helvetica,sans-serif;color:var(--verde);font-weight:bold;display:none;margin-top:.5rem">✅ Tu petición quedó copiada. Ahora pégala en el grupo de Facebook.</p>
+  </form>
+  <div class="botones">
+    <a class="btn btn-simbolo btn-cruz azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">✝️ Ver peticiones en Facebook</a>
+  </div>
+</section>
+
+<script>
+function armarPeticion() {
+  var nombre = document.getElementById('nombre-peticion').value.trim();
+  var texto = document.getElementById('texto-peticion').value.trim();
+  if (!texto) { alert('Escribe primero tu petición.'); return null; }
+  var mensaje = '🙏 Dios Te Habla Hoy — Petición de oración\n\n' + texto;
+  if (nombre) { mensaje += '\n\n— ' + nombre; }
+  return mensaje;
+}
+document.getElementById('btn-peticion-whatsapp').addEventListener('click', function () {
+  var mensaje = armarPeticion();
+  if (!mensaje) return;
+  window.open('https://wa.me/?text=' + encodeURIComponent(mensaje), '_blank');
+});
+document.getElementById('btn-peticion-facebook').addEventListener('click', function () {
+  var mensaje = armarPeticion();
+  if (!mensaje) return;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(mensaje);
+    document.getElementById('peticion-copiada').style.display = 'block';
+  }
+  window.open('https://www.facebook.com/groups/3326503057738826', '_blank');
+});
+</script>
+
+<section id="donar">
+  <h2>❤️ Donar / Apoyar este proyecto</h2>
+  <p><strong>Dios Te Habla Hoy</strong> se hace con amor y con tiempo, para llevar un versículo, una historia y un consejo a cada familia, cada día.</p>
+  <p>Tu apoyo ayuda a que este proyecto siga adelante y a que podamos ayudar a más familias. <strong>Donar es voluntario:</strong> nadie tiene que donar para leer la Biblia, ver los videos o participar en el grupo. Todo aquí sigue siendo gratis.</p>
+  <p>Si quieres apoyar este proyecto, escríbenos y te decimos cómo hacerlo. Por ahora, las donaciones se coordinan en privado.</p>
+  <!-- DONAR: cuentas y nombre del titular quitados por anonimato, 2026-11-06. No volver a ponerlos sin que se pida expresamente. -->
+  <h3>¿Quieres apoyar? Escríbenos</h3>
+  <p>Si quieres apoyar este proyecto, escríbenos y te decimos cómo hacerlo:</p>
+  <div class="botones">
+    <a class="btn azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">Escribir en el grupo de Facebook</a>
+    <a class="btn" href="https://wa.me/?text=Hola%2C%20quiero%20apoyar%20el%20proyecto%20Dios%20Te%20Habla%20Hoy" target="_blank" rel="noopener">Escribir por WhatsApp</a>
   </div>
 </section>
 
@@ -200,6 +417,138 @@ document.getElementById('btn-facebook').addEventListener('click', function () {
 });
 </script>
 
+<script>
+// ---------- BIBLIA ----------
+// La API gratuita bible-api.com solo acepta nombres de libros en
+// INGLÉS y no acepta translation=rvr (eso da 404). Por eso el
+// buscador muestra el texto en inglés (World English Bible,
+// dominio público) y cada resultado ofrece el botón para leer el
+// mismo pasaje en español en BibleGateway (Reina-Valera 1960).
+var LIBROS = [
+  ['Génesis','Genesis',50],['Éxodo','Exodus',40],['Levítico','Leviticus',27],
+  ['Números','Numbers',36],['Deuteronomio','Deuteronomy',34],['Josué','Joshua',24],
+  ['Jueces','Judges',21],['Rut','Ruth',4],['1 Samuel','1 Samuel',31],
+  ['2 Samuel','2 Samuel',24],['1 Reyes','1 Kings',22],['2 Reyes','2 Kings',25],
+  ['1 Crónicas','1 Chronicles',29],['2 Crónicas','2 Chronicles',36],['Esdras','Ezra',10],
+  ['Nehemías','Nehemiah',13],['Ester','Esther',10],['Job','Job',42],
+  ['Salmos','Psalms',150],['Proverbios','Proverbs',31],['Eclesiastés','Ecclesiastes',12],
+  ['Cantares','Song of Solomon',8],['Isaías','Isaiah',66],['Jeremías','Jeremiah',52],
+  ['Lamentaciones','Lamentations',5],['Ezequiel','Ezekiel',48],['Daniel','Daniel',12],
+  ['Oseas','Hosea',14],['Joel','Joel',3],['Amós','Amos',9],['Abdías','Obadiah',1],
+  ['Jonás','Jonah',4],['Miqueas','Micah',7],['Nahum','Nahum',3],
+  ['Habacuc','Habakkuk',3],['Sofonías','Zephaniah',3],['Hageo','Haggai',2],
+  ['Zacarías','Zechariah',14],['Malaquías','Malachi',4],
+  ['Mateo','Matthew',28],['Marcos','Mark',16],['Lucas','Luke',24],['Juan','John',21],
+  ['Hechos','Acts',28],['Romanos','Romans',16],['1 Corintios','1 Corinthians',16],
+  ['2 Corintios','2 Corinthians',13],['Gálatas','Galatians',6],['Efesios','Ephesians',6],
+  ['Filipenses','Philippians',4],['Colosenses','Colossians',4],
+  ['1 Tesalonicenses','1 Thessalonians',5],['2 Tesalonicenses','2 Thessalonians',3],
+  ['1 Timoteo','1 Timothy',6],['2 Timoteo','2 Timothy',4],['Tito','Titus',3],
+  ['Filemón','Philemon',1],['Hebreos','Hebrews',13],['Santiago','James',5],
+  ['1 Pedro','1 Peter',5],['2 Pedro','2 Peter',3],['1 Juan','1 John',5],
+  ['2 Juan','2 John',1],['3 Juan','3 John',1],['Judas','Jude',1],
+  ['Apocalipsis','Revelation',22]
+];
+// Mapa de nombres en español (y variantes sin tilde) a inglés, para
+// convertir lo que el visitante escribe, p. ej. "Juan 3:16" -> "John 3:16".
+var MAPA_ES_EN = {};
+LIBROS.forEach(function (l) {
+  MAPA_ES_EN[l[0].toLowerCase()] = l[1];
+  MAPA_ES_EN[l[0].toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')] = l[1];
+});
+MAPA_ES_EN['salmo'] = 'Psalms';
+MAPA_ES_EN['cantares'] = 'Song of Solomon';
+MAPA_ES_EN['cantar de los cantares'] = 'Song of Solomon';
+
+function referenciaEnIngles(ref) {
+  var texto = ref.trim();
+  // Probar con el nombre de libro más largo primero.
+  var claves = Object.keys(MAPA_ES_EN).sort(function (a, b) { return b.length - a.length; });
+  for (var i = 0; i < claves.length; i++) {
+    var clave = claves[i];
+    if (texto.toLowerCase().indexOf(clave) === 0) {
+      return MAPA_ES_EN[clave] + texto.slice(clave.length);
+    }
+  }
+  return texto;
+}
+
+function mostrarResultado(data, refOriginal) {
+  document.getElementById('error-biblia').style.display = 'none';
+  var caja = document.getElementById('resultado-biblia');
+  caja.style.display = 'block';
+  document.getElementById('resultado-ref').textContent = data.reference || refOriginal;
+  document.getElementById('resultado-texto').textContent = data.text || '';
+  document.getElementById('resultado-version').textContent = 'Texto en inglés — ' + (data.translation_name || 'World English Bible, dominio público') + '. Para leerlo en español, usa el botón de abajo.';
+  document.getElementById('btn-espanol').href = 'https://www.biblegateway.com/passage/?search=' + encodeURIComponent(refOriginal) + '&version=RVR1960';
+  caja.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function mostrarErrorBiblia() {
+  document.getElementById('resultado-biblia').style.display = 'none';
+  document.getElementById('error-biblia').style.display = 'block';
+}
+
+function buscarBiblia(refOriginal) {
+  var refIngles = referenciaEnIngles(refOriginal);
+  if (!refIngles) { mostrarErrorBiblia(); return; }
+  fetch('https://bible-api.com/' + encodeURIComponent(refIngles))
+    .then(function (resp) {
+      if (!resp.ok) { throw new Error('No encontrado'); }
+      return resp.json();
+    })
+    .then(function (data) {
+      if (!data || !data.text) { mostrarErrorBiblia(); return; }
+      mostrarResultado(data, refOriginal);
+    })
+    .catch(function () { mostrarErrorBiblia(); });
+}
+
+document.getElementById('form-buscar-biblia').addEventListener('submit', function (e) {
+  e.preventDefault();
+  buscarBiblia(document.getElementById('cita-biblia').value);
+});
+
+// Llenar el selector de libros (en español) con sus capítulos máximos.
+var selectLibro = document.getElementById('libro-biblia');
+LIBROS.forEach(function (l) {
+  var opt = document.createElement('option');
+  opt.value = l[1];
+  opt.textContent = l[0] + ' (' + l[2] + ' capítulos)';
+  opt.setAttribute('data-max', l[2]);
+  selectLibro.appendChild(opt);
+});
+document.getElementById('form-leer-capitulo').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var opt = selectLibro.options[selectLibro.selectedIndex];
+  var max = parseInt(opt.getAttribute('data-max'), 10);
+  var cap = parseInt(document.getElementById('capitulo-biblia').value, 10);
+  if (!cap || cap < 1 || cap > max) {
+    alert('Ese libro tiene ' + max + ' capítulos. Escribe un capítulo del 1 al ' + max + '.');
+    return;
+  }
+  buscarBiblia(opt.value + ' ' + cap);
+});
+
+// ---------- VIDEOS ----------
+// El reproductor está dentro de la página: los botones solo cambian
+// el video que suena, sin salir de aquí. Solo el buscador de YouTube
+// abre YouTube en una pestaña nueva.
+document.querySelectorAll('#videos [data-video]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var id = btn.getAttribute('data-video');
+    document.getElementById('reproductor').src = 'https://www.youtube.com/embed/' + id;
+    document.getElementById('titulo-video').textContent = btn.getAttribute('data-titulo');
+  });
+});
+document.getElementById('form-buscar-youtube').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var tema = document.getElementById('tema-youtube').value.trim();
+  if (!tema) { alert('Escribe un tema para buscar, por ejemplo: historia de David y Goliat'); return; }
+  window.open('https://www.youtube.com/results?search_query=' + encodeURIComponent(tema), '_blank');
+});
+</script>
+
 <section id="grupo">
   <h2>Únete al grupo</h2>
   <p>En el grupo <strong>Dios Te Habla Hoy</strong> compartimos cada día el versículo, la historia y consejos para la familia y para manejar las emociones, con fe y con lógica.</p>
@@ -209,9 +558,15 @@ document.getElementById('btn-facebook').addEventListener('click', function () {
 </section>
 
 </main>
+<section class="naturaleza">
+  <h2>🌿 La creación de Dios</h2>
+  <p>«Los cielos cuentan la gloria de Dios, y el firmamento anuncia la obra de sus manos.» — Salmo 19:1</p>
+  <p>La naturaleza nos recuerda cada día que Dios está presente, en el amanecer, en las montañas y en la paz del campo.</p>
+</section>
 <footer>
   <p>Dios Te Habla Hoy — Un versículo y una historia cada día.<br>
-  Esta página no pide cuenta, ni contraseña, ni ningún dato personal. Solo entra, lee y comparte.</p>
+  Esta página no pide cuenta, ni contraseña, ni ningún dato personal. Solo entra, lee y comparte.<br>
+  Actualizado: 6 de noviembre de 2026.</p>
 </footer>
 </body>
 </html>

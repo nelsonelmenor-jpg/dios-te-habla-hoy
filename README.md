@@ -7,9 +7,15 @@ Un versículo de la Biblia y una historia corta cada día, para empezar tu día 
 - **Versículo del día**, grande y fácil de leer.
 - **Reflexión corta, con lógica**: no solo el versículo, también la razón práctica.
 - **Historia bíblica de 1 minuto**, contada con nuestras propias palabras.
+- **Videos**: música cristiana, alabanzas e historias bíblicas que se ven y se escuchan dentro de la página, sin salir de ella, más buscador de YouTube.
+- **La Biblia completa**: busca una cita o lee un capítulo (texto en inglés por la API gratuita; cada resultado tiene botón «Leer en español (Reina-Valera)» en BibleGateway).
+- **Libros gratis**: El Progreso del Peregrino, la Biblia Reina-Valera 1909 en PDF y una biblioteca virtual gratuita.
+- **Devocionales**: Familia, Fuerza, Ánimo y Descanso, cada uno con versículo, reflexión con lógica y oración.
 - **Temas**: Familia, Fuerza, Ánimo y Descanso.
 - **Versículos anteriores**.
 - **Oraciones y prédicas**: los visitantes pueden escribir una petición de oración, una oración o su prédica, y compartirla en el grupo de Facebook (o por WhatsApp). La página no guarda nada: el formulario solo arma el texto y abre Facebook/WhatsApp para compartirlo. Los comentarios y las prédicas (texto, audio o video) se publican como publicaciones del grupo.
+- **Peticiones**: formulario de petición de oración que se comparte en el grupo de Facebook o por WhatsApp, sin guardar nada en la página.
+- **Donar / Apoyar**: explica que donar es voluntario y que todo sigue siendo gratis; sin cuentas ni nombre del titular, por anonimato.
 - **Enlace al grupo de Facebook** y botones para compartir por WhatsApp y Facebook.
 
 ## Seguridad
