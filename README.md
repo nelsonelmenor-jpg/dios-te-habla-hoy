@@ -2,6 +2,10 @@
 
 Un versículo de la Biblia y una historia corta cada día, para empezar tu día con fe. Dios te habla hoy.
 
+## Una sola página — unificación
+
+Esta página en GitHub Pages (https://nelsonelmenor-jpg.github.io/dios-te-habla-hoy/) es la página principal y unificada de Dios Te Habla Hoy. La página en Google Sites (https://sites.google.com/view/diostehablahoy) enlaza a esta página con el botón "Ver la página completa", y esta página enlaza a Google Sites en el pie. Las dos son una sola página: el mismo proyecto, el mismo versículo del día y la misma historia, publicados como "Dios Te Habla Hoy".
+
 ## ¿Qué hay en esta página?
 
 - **Versículo del día**, grande y fácil de leer.
