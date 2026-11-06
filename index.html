@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dios Te Habla Hoy — Un versículo de la Biblia y una historia corta cada día, para empezar tu día con fe.">
+<title>Dios Te Habla Hoy — Versículo del día</title>
+<style>
+  :root{--dorado:#b8860b;--dorado-claro:#f5d76e;--crema:#fffaf0;--marron:#4a3225;--texto:#2b2b2b;--verde:#2e7d32}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--crema);color:var(--texto);line-height:1.7}
+  header{background:linear-gradient(160deg,#3d2b1f,#6b4a1f);color:#fff;text-align:center;padding:2.2rem 1rem 1.6rem}
+  header h1{font-size:2.1rem;letter-spacing:.5px}
+  header p{font-family:Arial,Helvetica,sans-serif;font-size:1rem;opacity:.92;max-width:560px;margin:.6rem auto 0}
+  nav{background:#2e1f14;position:sticky;top:0;z-index:10}
+  nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:.2rem;list-style:none;padding:.4rem}
+  nav a{color:#f5d76e;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:.95rem;padding:.5rem .8rem;border-radius:20px}
+  nav a:hover{background:rgba(245,215,110,.2)}
+  main{max-width:760px;margin:0 auto;padding:1rem}
+  section{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:1.4rem;margin:1rem 0}
+  .fecha{font-family:Arial,Helvetica,sans-serif;color:var(--dorado);font-weight:bold;text-transform:uppercase;font-size:.85rem;letter-spacing:1px;text-align:center}
+  .versiculo{font-size:1.55rem;text-align:center;color:var(--marron);margin:.8rem 0;line-height:1.5}
+  .cita{text-align:center;font-family:Arial,Helvetica,sans-serif;font-weight:bold;color:var(--dorado);margin-bottom:.5rem}
+  h2{color:var(--marron);font-size:1.4rem;margin-bottom:.6rem;border-bottom:2px solid var(--dorado-claro);padding-bottom:.3rem}
+  h3{color:var(--marron);margin:.9rem 0 .3rem}
+  p{margin:.5rem 0}
+  .botones{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1rem}
+  .btn{font-family:Arial,Helvetica,sans-serif;display:inline-block;text-decoration:none;color:#fff;background:var(--verde);padding:.7rem 1.2rem;border-radius:30px;font-weight:bold}
+  .btn.azul{background:#1877f2}
+  .btn.dorado{background:var(--dorado)}
+  .temas{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+  .tema{background:var(--crema);border:1px solid var(--dorado-claro);border-radius:10px;padding:.8rem;text-align:center}
+  .tema strong{display:block;font-size:1.1rem;color:var(--marron)}
+  .tema span{font-family:Arial,Helvetica,sans-serif;font-size:.9rem;color:#555}
+  .lista-versiculos{list-style:none;font-family:Arial,Helvetica,sans-serif}
+  .lista-versiculos li{padding:.6rem 0;border-bottom:1px solid #eee}
+  .lista-versiculos li:last-child{border-bottom:none}
+  .lista-versiculos b{color:var(--marron)}
+  .nota{font-family:Arial,Helvetica,sans-serif;background:var(--crema);border:1px solid var(--dorado-claro);border-radius:10px;padding:.8rem;font-size:.92rem;color:#555}
+  .form-oracion{font-family:Arial,Helvetica,sans-serif;margin-top:1rem}
+  .form-oracion label{display:block;font-weight:bold;color:var(--marron);margin:.7rem 0 .2rem}
+  .form-oracion input,.form-oracion select,.form-oracion textarea{width:100%;padding:.6rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;font-family:Arial,Helvetica,sans-serif}
+  .form-oracion textarea{min-height:110px}
+  .form-oracion button{font-family:Arial,Helvetica,sans-serif;display:inline-block;border:none;cursor:pointer;color:#fff;background:var(--verde);padding:.7rem 1.2rem;border-radius:30px;font-weight:bold;margin-top:.8rem}
+  .form-oracion button.azul{background:#1877f2}
+  #texto-copiado{font-family:Arial,Helvetica,sans-serif;color:var(--verde);font-weight:bold;display:none;margin-top:.5rem}
+  footer{text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:.9rem;color:#777;padding:1.5rem 1rem 2rem}
+  footer a{color:var(--dorado)}
+  @media(max-width:520px){header h1{font-size:1.6rem}.versiculo{font-size:1.3rem}.temas{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🙏 Dios Te Habla Hoy</h1>
+  <p>Un versículo de la Biblia y una historia corta cada día, para empezar tu día con fe.</p>
+</header>
+<nav>
+  <ul>
+    <li><a href="#hoy">Hoy</a></li>
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#temas">Temas</a></li>
+    <li><a href="#anteriores">Versículos anteriores</a></li>
+    <li><a href="#oraciones">Oraciones y prédicas</a></li>
+    <li><a href="#grupo">Grupo</a></li>
+  </ul>
+</nav>
+<main>
+
+<section id="hoy">
+  <p class="fecha">Viernes, 6 de noviembre de 2026</p>
+  <p class="versiculo">«Los que esperan en el Señor renovarán sus fuerzas; levantarán el vuelo como las águilas.»</p>
+  <p class="cita">— Isaías 40:31</p>
+  <h2>Reflexión de hoy</h2>
+  <p>Cuando ya estás vacío, empujar más fuerte no te da fuerzas nuevas. La fuerza se renueva esperando en Dios, descansando en Él.</p>
+  <p>Como el águila, que no sube aleteando sin parar: abre las alas y se deja llevar por el viento. Hoy, si estás cansado, descansa en Él. Mañana tendrás claridad para pensar y decidir mejor.</p>
+  <div class="botones">
+    <a class="btn" href="https://wa.me/?text=Dios%20Te%20Habla%20Hoy%20%E2%80%94%20Isa%C3%ADas%2040%3A31%3A%20%C2%ABLos%20que%20esperan%20en%20el%20Se%C3%B1or%20renovar%C3%A1n%20sus%20fuerzas%3B%20levantar%C3%A1n%20el%20vuelo%20como%20las%20%C3%A1guilas.%C2%BB" target="_blank" rel="noopener">Compartir por WhatsApp</a>
+    <a class="btn azul" href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">Compartir en Facebook</a>
+  </div>
+</section>
+
+<section id="historia">
+  <h2>Historia de hoy — 1 minuto</h2>
+  <h3>Elías bajo el árbol — 1 Reyes 19</h3>
+  <p>Elías estaba agotado. Había ganado una gran batalla, pero después llegó el miedo, y corrió hasta el desierto. Se sentó bajo un árbol, y ya no podía más. Le dijo a Dios: ya no puedo, mejor me rindo.</p>
+  <p>Pero Dios no lo regañó. No le pidió que se levantara y siguiera corriendo. Lo dejó dormir. Y un ángel le llevó pan y agua, para que comiera y descansara. Durmió otra vez, comió otra vez, y poco a poco, sus fuerzas volvieron.</p>
+  <p><strong>La lección:</strong> la fuerza no se recupera empujando más cuando ya estás vacío. Se renueva descansando en Dios.</p>
+</section>
+
+<section id="temas">
+  <h2>Busca por tema</h2>
+  <div class="temas">
+    <div class="tema"><strong>👨‍👩‍👧 Familia</strong><span>La familia y el vacío emocional</span></div>
+    <div class="tema"><strong>🦅 Fuerza</strong><span>Fuerzas renovadas en Dios</span></div>
+    <div class="tema"><strong>💛 Ánimo</strong><span>Cuando ya no puedes más</span></div>
+    <div class="tema"><strong>😴 Descanso</strong><span>Dormir y descansar en paz</span></div>
+  </div>
+</section>
+
+<section id="anteriores">
+  <h2>Versículos anteriores</h2>
+  <ul class="lista-versiculos">
+    <li><b>Isaías 40:31</b> — 6 de noviembre de 2026: Los que esperan en el Señor renovarán sus fuerzas.</li>
+    <li><b>Filipenses 4:13</b> — 5 de noviembre de 2026: Todo lo puedo en Cristo que me fortalece.</li>
+    <li><b>Isaías 41:10</b> — 4 de noviembre de 2026: No temas, porque yo estoy contigo.</li>
+    <li><b>Salmo 23:1</b> — El Señor es mi pastor, nada me faltará.</li>
+  </ul>
+</section>
+
+<section id="oraciones">
+  <h2>Oraciones y prédicas</h2>
+  <p>Aquí puedes dejar una petición de oración, una oración de agradecimiento o compartir tu prédica. También puedes comentar lo que Dios te habló hoy.</p>
+  <!--
+    IMPORTANTE — SEGURIDAD: esta página es estática (GitHub Pages).
+    No tiene base de datos, no pide cuenta ni contraseña, y NO guarda
+    nada de lo que se escribe aquí. Los comentarios y las prédicas
+    se hacen en Facebook, en el grupo Dios Te Habla Hoy, donde los
+    miembros pueden comentar y publicar sus prédicas (texto, audio
+    o video) como publicaciones del grupo.
+    El formulario de abajo solo arma el texto y lo abre para
+    compartirlo por Facebook o por WhatsApp. Nada queda guardado
+    en esta página.
+  -->
+  <p class="nota">🙏 <strong>¿Cómo funciona?</strong> Escribe tu oración o tu prédica abajo. Al enviarla, se abre para compartirla en el grupo de Facebook — allí queda publicada, se puede comentar y otros pueden orar por ti. También puedes compartirla por WhatsApp. En esta página no queda guardado nada.</p>
+
+  <form class="form-oracion" id="form-oracion">
+    <label for="tipo-oracion">¿Qué quieres compartir?</label>
+    <select id="tipo-oracion">
+      <option>Petición de oración</option>
+      <option>Oración de agradecimiento</option>
+      <option>Prédica</option>
+      <option>Comentario sobre el versículo de hoy</option>
+    </select>
+    <label for="nombre-oracion">Tu nombre (opcional)</label>
+    <input id="nombre-oracion" type="text" placeholder="Escribe tu nombre, o déjalo en blanco">
+    <label for="texto-oracion">Tu oración o tu prédica</label>
+    <textarea id="texto-oracion" placeholder="Escribe aquí tu petición, tu oración o tu prédica..." required></textarea>
+    <div class="botones">
+      <button type="button" class="azul" id="btn-facebook">Comentar en Facebook</button>
+      <button type="button" id="btn-whatsapp">Compartir por WhatsApp</button>
+    </div>
+    <p id="texto-copiado">✅ Tu texto quedó copiado. Ahora pégalo en el grupo de Facebook.</p>
+  </form>
+
+  <h3>Comenta y comparte tu prédica en Facebook</h3>
+  <p>En el grupo puedes publicar tu prédica en texto, en audio o en video, y comentar las oraciones de los demás.</p>
+  <div class="botones">
+    <a class="btn azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">Comentar en Facebook</a>
+    <a class="btn azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">Compartir tu prédica en Facebook</a>
+  </div>
+
+  <!--
+    PLUGIN DE COMENTARIOS DE FACEBOOK (marcador):
+    El plugin oficial de Facebook (fb-comments) necesita el SDK de
+    Facebook y un ID de aplicación, y solo funciona con la URL
+    publicada de la página. Por eso, en esta página estática los
+    comentarios viven directamente en el grupo de Facebook, que es
+    donde la comunidad ya está. Cuando la página esté publicada en
+    GitHub Pages se puede añadir aquí el div oficial:
+    <div class="fb-comments" data-href="https://www.facebook.com/groups/3326503057738826" data-width="100%" data-numposts="5"></div>
+    Por ahora, el botón de abajo abre los comentarios del grupo.
+  -->
+  <div id="comentarios-facebook">
+    <h3>Comentarios</h3>
+    <p>Los comentarios están en el grupo de Facebook. Allí puedes leer las oraciones de otros, comentar y orar por ellos.</p>
+    <div class="botones">
+      <a class="btn azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">Ver comentarios en Facebook</a>
+    </div>
+  </div>
+</section>
+
+<script>
+// Nada de lo que se escribe aquí se guarda en la página ni se envía
+// a ningún servidor. Solo se arma el texto y se abre Facebook o
+// WhatsApp para compartirlo, con un enlace (share link).
+function armarTexto() {
+  var tipo = document.getElementById('tipo-oracion').value;
+  var nombre = document.getElementById('nombre-oracion').value.trim();
+  var texto = document.getElementById('texto-oracion').value.trim();
+  if (!texto) { alert('Escribe primero tu oración o tu prédica.'); return null; }
+  var mensaje = '🙏 Dios Te Habla Hoy — ' + tipo + '\n\n' + texto;
+  if (nombre) { mensaje += '\n\n— ' + nombre; }
+  return mensaje;
+}
+document.getElementById('btn-whatsapp').addEventListener('click', function () {
+  var mensaje = armarTexto();
+  if (!mensaje) return;
+  window.open('https://wa.me/?text=' + encodeURIComponent(mensaje), '_blank');
+});
+document.getElementById('btn-facebook').addEventListener('click', function () {
+  var mensaje = armarTexto();
+  if (!mensaje) return;
+  // Facebook no permite prellenar una publicación de grupo con un
+  // enlace: se copia el texto y se abre el grupo para pegarlo.
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(mensaje);
+    document.getElementById('texto-copiado').style.display = 'block';
+  }
+  window.open('https://www.facebook.com/groups/3326503057738826', '_blank');
+});
+</script>
+
+<section id="grupo">
+  <h2>Únete al grupo</h2>
+  <p>En el grupo <strong>Dios Te Habla Hoy</strong> compartimos cada día el versículo, la historia y consejos para la familia y para manejar las emociones, con fe y con lógica.</p>
+  <div class="botones">
+    <a class="btn azul" href="https://www.facebook.com/groups/3326503057738826" target="_blank" rel="noopener">Ir al grupo en Facebook</a>
+  </div>
+</section>
+
+</main>
+<footer>
+  <p>Dios Te Habla Hoy — Un versículo y una historia cada día.<br>
+  Esta página no pide cuenta, ni contraseña, ni ningún dato personal. Solo entra, lee y comparte.</p>
+</footer>
+</body>
+</html>
